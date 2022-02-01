@@ -1,0 +1,50 @@
+{% extends 'basic.html' %}
+
+{% block head %}
+<title>Contact Developer</title>
+{% endblock head %}
+
+{% block body %}
+<br>
+<header class="pb-3 border-bottom">
+  <span class="fs-4 mx-2">Contact Developer</span>
+</header>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+  {{message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="container my-3">
+  <form action="/contact" method='POST'>
+    <br>
+    <h5><label for="name" class="form-label">Name : </label></h5>
+    <input type="text" name="name" class="form-control" id="name" placeholder="Enter Personal Details"
+      aria-label="Enter Personal Details" required>
+
+    <br>
+    <h5><label for="contact_email" class="form-label">Email Address : </label></h5>
+    <input type="email" name="email" class="form-control" id="contact_email" placeholder="Enter Email Details"
+      aria-label="Enter Email Details" required>
+
+    <br>
+    <h5><label for="phone" class="form-label" type="tel">Contact Number : </label></h5>
+    <input type="text" name="contact" class="form-control" id="phone" placeholder="Enter Contact Details"
+      aria-label="Enter Contact Details" required>
+
+    <br>
+    <h5><label for="comment" class="form-label">Description : </label></h5>
+    <textarea class="form-control" name="desc" id="comment" placeholder="Leave a comment here"
+      aria-label="Leave a comment here" rows="3" required></textarea>
+
+    <br>
+    <button type="submit" class="btn btn-primary my-2">Send</button>
+  </form>
+</div>
+{% endblock body %}

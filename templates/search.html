@@ -1,0 +1,30 @@
+{% extends 'basic.html' %}
+
+{% block head %}
+<title>Search Results</title>
+{% endblock head %}
+
+
+{% block body %}
+<br>
+<header class="pb-3 mb-4 border-bottom">
+<span class="fs-4 mx-2">Search Results for : '{{to_be_search}}'</span>
+</header>
+
+<div class="container">
+    {% for data in search_data %}
+        {% if to_be_search in data|string %}
+            <br>
+            <h5 style="white-space:pre-wrap">
+                Sr. No : {{data.srno}}
+                Registeration Number : {{data.reg_no}}
+                SGPA : {{data.sgpa}}
+                Semester : {{data.semester}}
+                Date Added : {{data.date_created}}
+            </h5>
+            <hr>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock body %}

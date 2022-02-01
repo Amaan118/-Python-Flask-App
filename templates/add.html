@@ -1,0 +1,40 @@
+{% extends 'basic.html' %}
+
+{% block head %}
+<title>Add Record</title>
+{% endblock head %}
+
+
+{% block body %}
+<br>
+<header class="pb-3 mb-4 border-bottom">
+  <span class="fs-4 mx-2">Add Record</span>
+</header>
+
+
+<form action="/" method="POST">
+  <div class="container">
+    <div class="mb-3">
+      <h5><label for="registeration_num" class="form-label">Registeration Number : </label></h5>
+      <input type="text" name="registeration" class="form-control" id="registeration_num" required>
+    </div>
+
+    <div class="mb-3">
+      <h5><label for="SGPA" class="form-label">SGPA : </label></h5>
+      <input type="text" name="sgpa" class="form-control" id="SGPA" required>
+    </div>
+
+    <div class="mb-3">
+      <h5><label for="semester" class="form-label">Semester :</label></h5>
+      <input type="text" name="sem" class="form-control" id="semester" required>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a type="submit" href="/" class="btn btn-primary mx-2">Back</button></a>
+    <button type="reset" class="btn btn-danger">Reset</button>
+  </div>
+  </div>
+</form>
+
+{% endblock body %}

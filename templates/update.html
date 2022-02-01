@@ -1,0 +1,47 @@
+{% extends 'basic.html' %} {% block head %}
+<title>Update Data</title>
+{% endblock head %} {% block body %}
+<br>
+<header class="pb-3 mb-4 border-bottom">
+<span class="fs-4 mx-2">Update Record</span>
+</header>
+
+<div class="container my-3">
+  <form action="/update/{{update_data.srno}}" method="POST">
+    <div class="mb-3">
+      <h6>
+        <label for="update_reg" class="form-label">Registeration Number</label>
+      </h6>
+      <input
+        type="text"
+        name="update_reg"
+        value="{{update_data.reg_no}}"
+        class="form-control"
+        id="update_reg"
+      />
+    </div>
+    <div class="mb-3">
+      <h6><label for="update_sgpa" class="form-label">SGPA</label></h6>
+      <input
+        type="text"
+        name="update_sgpa"
+        value="{{update_data.sgpa}}"
+        class="form-control"
+        id="update_sgpa"
+      />
+    </div>
+    <div class="mb-3">
+      <h6><label for="update_sem" class="form-label">Semester</label></h6>
+      <input
+        type="text"
+        name="update_sem"
+        value="{{update_data.semester}}"
+        class="form-control"
+        id="update_sem"
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-dark">Update</button>
+  </form>
+</div>
+{% endblock body %}
